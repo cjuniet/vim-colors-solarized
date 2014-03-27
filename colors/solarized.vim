@@ -212,15 +212,15 @@ else
 endif
 call s:SetOption("termtrans",s:solarized_termtrans_default)
 call s:SetOption("degrade",0)
-call s:SetOption("bold",1)
-call s:SetOption("underline",1)
-call s:SetOption("italic",1) " note that we need to override this later if the terminal doesn't support
+call s:SetOption("bold",0)
+call s:SetOption("underline",0)
+call s:SetOption("italic",0) " note that we need to override this later if the terminal doesn't support
 call s:SetOption("termcolors",16)
 call s:SetOption("contrast","normal")
 call s:SetOption("visibility","normal")
 call s:SetOption("diffmode","normal")
 call s:SetOption("hitrail",0)
-call s:SetOption("menu",1)
+call s:SetOption("menu",0)
 
 "}}}
 " Colorscheme initialization "{{{
@@ -257,8 +257,8 @@ if (has("gui_running") && g:solarized_degrade == 0)
     let s:violet      = "#6c71c4"
     let s:blue        = "#268bd2"
     let s:cyan        = "#2aa198"
-    "let s:green       = "#859900" "original
-    let s:green       = "#719e07" "experimental
+    let s:green       = "#859900" "original
+    "let s:green       = "#719e07" "experimental
 elseif (has("gui_running") && g:solarized_degrade == 1)
     " These colors are identical to the 256 color mode. They may be viewed
     " while in gui mode via "let g:solarized_degrade=1", though this is not
@@ -589,7 +589,7 @@ exe "hi! Underlined"     .s:fmt_none   .s:fg_violet .s:bg_none
 exe "hi! Ignore"         .s:fmt_none   .s:fg_none   .s:bg_none
 "       *Ignore          left blank, hidden  |hl-Ignore|
 
-exe "hi! Error"          .s:fmt_bold   .s:fg_red    .s:bg_none
+exe "hi! Error"          .s:fmt_bold   .s:fg_base0  .s:bg_red
 "       *Error           any erroneous construct
 
 exe "hi! Todo"           .s:fmt_bold   .s:fg_magenta.s:bg_none
